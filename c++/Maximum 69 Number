@@ -1,0 +1,28 @@
+//You are given a positive integer num consisting only of digits 6 and 9.
+
+Return the maximum number you can get by changing at most one digit (6 becomes 9, and 9 becomes 6).
+//
+
+
+
+
+class Solution {
+public:
+    int maximum69Number (int num) {
+        vector<int> v;
+        int n=num;
+        while(n>0){
+            int rem=n%10;
+            v.push_back(rem);
+            n=n/10;
+        }
+        for(int i=v.size()-1;i>=0;i--){
+            if(v[i] == 6){
+                int change =  (3) * (pow(10,i)) ;
+                num+=change ;
+                break ;
+            }
+        }
+ return num ;
+    }
+};
