@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+      int sq=0;
+      if(n==1)
+        return true;
+      if(n>1 && n<=4)
+        return false;
+      while(n>0){
+        int m=n%10;
+        sq=sq+(m*m);
+        n=n/10;
+      } 
+      return isHappy(sq); 
+    }
+};
